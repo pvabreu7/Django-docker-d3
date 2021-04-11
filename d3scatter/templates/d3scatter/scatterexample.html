@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <!-- Carregamentos das libs remotamente -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <script src="https://d3js.org/d3.v3.min.js" charset="utf-8"></script>
+    <script src="https://d3js.org/d3-scale-chromatic.v1.min.js"></script>
+    <title>D3 Random Scatter Plot </title>
+  </head>
+  <body>
+    <h2>Random Scatter Plot</h2>
+    <p>Visualização de Scatter Plot aleatório através da D3 e Django com hidden inputs.</p>
+    <h3></h3>
+  <!-- Criação do Scatter plot -->
+  {% load static %}
+  {% if random_data %}
+    <input id="random_data" value="{{ random_data }}" type="hidden"></input>
+    <script src="{% static 'js/create_scatter.js' %}"></script>
+  {% endif %}
+  </body>
+</html>
